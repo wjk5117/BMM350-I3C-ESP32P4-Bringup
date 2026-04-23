@@ -4,6 +4,9 @@
 
 This repository is a **preliminary open-source attempt** to explore the feasibility of bringing up a **single Bosch BMM350 sensor** over **I3C** on **ESP32-P4**.
 
+<!-- add a figure here -->
+![BMM350 I3C Setup](./hardware.png)
+
 Since practical BMM350-over-I3C examples are still relatively limited, this project is shared as a lightweight reference in the hope that it may be useful to others working on similar hardware bring-up and debugging tasks.
 
 The current focus is on:
@@ -62,21 +65,21 @@ At present, the repository includes **three single-sensor I3C examples**:
 
 ## Repository Structure
 
-### Core Driver Files
-- **`bmm350_defs.h`** — register definitions and shared constants  
-- **`bmm350.h`** — public BMM350 driver interface  
-- **`bmm350.c`** — core BMM350 driver implementation  
+### Core Driver Files (`driver/`)
+- **`bmm350_defs.h`** — register definitions and shared constants
+- **`bmm350.h`** — public BMM350 driver interface
+- **`bmm350.c`** — core BMM350 driver implementation
 
-> These core driver files are based on the official [Bosch Sensortec BMM350 SensorAPI](https://github.com/boschsensortec/BMM350_SensorAPI)
+> These core driver files are adapted from the official [Bosch Sensortec BMM350 SensorAPI](https://github.com/boschsensortec/BMM350_SensorAPI).
 
-### ESP32-P4 I3C Port Layer
+### ESP32-P4 I3C Port Layer (`esp32_i3c_port/`)
 - **`bmm350_port_esp32p4_i3c.h`** — ESP32-P4 I3C port-layer header
 - **`bmm350_port_esp32p4_i3c.c`** — ESP32-P4 I3C port-layer implementation
 
-### Example Entry Files
-- **`single_bmm350_setaasa_main.c`** — single-sensor `SETAASA` example
-- **`single_bmm350_setdasa_main.c`** — single-sensor `SETDASA` example
-- **`single_bmm350_entdaa_main.c`** — single-sensor `ENTDAA` example
+### Example Entry Files (`examples/`)
+- **`single_bmm350_i3c_setaasa_main.c`** — single-sensor `SETAASA` example
+- **`single_bmm350_i3c_setdasa_main.c`** — single-sensor `SETDASA` example
+- **`single_bmm350_i3c_entdaa_main.c`** — single-sensor `ENTDAA` example
 
 ### Build Files
 - **`CMakeLists.txt`** — project build configuration
@@ -87,24 +90,22 @@ At present, the repository includes **three single-sensor I3C examples**:
 
 ## Quick Start
 
-### 1. Choose an Example
+### 1. Set Up Your ESP-IDF Project
 
-This repository currently provides three single-sensor I3C examples:
+Make sure ESP-IDF is installed and exported correctly in your environment.
+If needed, refer to the official ESP32-P4 getting-started guide:  
+<https://docs.espressif.com/projects/esp-idf/en/latest/esp32p4/get-started/index.html>
 
-- `single_bmm350_setaasa_main.c`
-- `single_bmm350_setdasa_main.c`
-- `single_bmm350_entdaa_main.c`
-
-Select one example and use it as the active `main` file in your project.
+In a typical ESP-IDF project (for example, when using VS Code + ESP-IDF extension), the source files in this repository are expected to live under the project's `main/` component directory.
 
 ---
 
-### 2. Set Up ESP-IDF
+### 2. Choose an Example
+Select one example and use it as the active entry file in your ESP-IDF project.
 
-Make sure ESP-IDF is installed and exported correctly in your environment.
-
-If needed, refer to the official ESP32-P4 getting-started guide:  
-<https://docs.espressif.com/projects/esp-idf/en/latest/esp32p4/get-started/index.html>
+If your project expects a single `main.c`, you can either:
+- rename the selected example as `main.c`, or
+- keep the file name and include it explicitly in `main/CMakeLists.txt`
 
 ---
 
