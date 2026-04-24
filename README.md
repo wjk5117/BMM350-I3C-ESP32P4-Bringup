@@ -182,7 +182,7 @@ I (508) BMM350_SETAASA_1X: X=31.03 uT Y=-67.07 uT Z=25.37 uT | |B|=78.13 uT | Te
   - BMM350 only exposes **two static-address options** through `ADSEL`, which limits straightforward scaling with `SETAASA` and `SETDASA`
   - For `ENTDAA`, only the **ADSEL-related 1 bit** appears practically accessible, while the remaining **3 OTP-backed identity bits** are not currently configurable based on the available documentation
 
-- **If you are interested in multi-BMM350 I3C, or have suggestions / ideas for a cleaner implementation, feel free to reach out:      [jikewang@sjtu.edu.cn](mailto:jikewang@sjtu.edu.cn)**
+### **If you are interested in multi-BMM350 I3C, or have suggestions / ideas for a cleaner implementation, feel free to reach out:      [jikewang@sjtu.edu.cn](mailto:jikewang@sjtu.edu.cn)**
 
 
 ## License
