@@ -161,20 +161,9 @@ I (388) BMM350_SETAASA_1X: Minimal init success
 I (388) BMM350_SETAASA_1X: Step 6: Read magnetic field data
 I (388) BMM350_SETAASA_1X: X=31.02 uT Y=-67.48 uT Z=24.75 uT | |B|=78.28 uT | Temp=22.58 C | read=181 us
 I (398) BMM350_SETAASA_1X: X=30.99 uT Y=-67.64 uT Z=25.30 uT | |B|=78.59 uT | Temp=22.58 C | read=138 us
-I (408) BMM350_SETAASA_1X: X=31.19 uT Y=-67.43 uT Z=25.75 uT | |B|=78.63 uT | Temp=22.59 C | read=138 us
-I (418) BMM350_SETAASA_1X: X=31.28 uT Y=-67.29 uT Z=25.39 uT | |B|=78.42 uT | Temp=22.61 C | read=138 us
-I (428) BMM350_SETAASA_1X: X=31.01 uT Y=-67.07 uT Z=25.77 uT | |B|=78.26 uT | Temp=22.59 C | read=138 us
-I (438) BMM350_SETAASA_1X: X=31.18 uT Y=-67.03 uT Z=25.80 uT | |B|=78.30 uT | Temp=22.58 C | read=138 us
-I (448) BMM350_SETAASA_1X: X=31.10 uT Y=-67.20 uT Z=25.03 uT | |B|=78.16 uT | Temp=22.58 C | read=138 us
-I (458) BMM350_SETAASA_1X: X=31.45 uT Y=-67.16 uT Z=25.55 uT | |B|=78.43 uT | Temp=22.58 C | read=138 us
-I (468) BMM350_SETAASA_1X: X=31.36 uT Y=-67.26 uT Z=25.50 uT | |B|=78.47 uT | Temp=22.59 C | read=138 us
-I (478) BMM350_SETAASA_1X: X=31.23 uT Y=-67.15 uT Z=25.61 uT | |B|=78.36 uT | Temp=22.58 C | read=138 us
-I (488) BMM350_SETAASA_1X: X=31.25 uT Y=-67.27 uT Z=25.25 uT | |B|=78.35 uT | Temp=22.57 C | read=138 us
-I (498) BMM350_SETAASA_1X: X=31.21 uT Y=-67.31 uT Z=25.53 uT | |B|=78.46 uT | Temp=22.58 C | read=138 us
-I (508) BMM350_SETAASA_1X: X=31.03 uT Y=-67.07 uT Z=25.37 uT | |B|=78.13 uT | Temp=22.60 C | read=138 us
 ```
 
-### Notes
+## Notes
 
 - These examples are intended for **single-sensor bring-up and validation**
 
