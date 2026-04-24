@@ -183,3 +183,11 @@ I (508) BMM350_SETAASA_1X: X=31.03 uT Y=-67.07 uT Z=25.37 uT | |B|=78.13 uT | Te
   - For `ENTDAA`, only the **ADSEL-related 1 bit** appears practically accessible, while the remaining **3 OTP-backed identity bits** are not currently configurable based on the available documentation
 
 - **If you are interested in multi-BMM350 I3C, or have suggestions / ideas for a cleaner implementation, feel free to reach out:      [jikewang@sjtu.edu.cn](mailto:jikewang@sjtu.edu.cn)**
+
+
+## License
+
+This project is released under the BSD-3-Clause License.
+
+The core BMM350 driver files are adapted from the official Bosch Sensortec BMM350 SensorAPI:
+https://github.com/boschsensortec/BMM350_SensorAPI
