@@ -93,8 +93,12 @@ At present, the repository includes **three single-sensor I3C examples**:
 ### 1. Set Up Your ESP-IDF Project
 
 Make sure ESP-IDF is installed and exported correctly in your environment.
-If needed, refer to the official ESP32-P4 getting-started guide:  
-<https://docs.espressif.com/projects/esp-idf/en/latest/esp32p4/get-started/index.html>
+If needed, refer to the official [ESP32-P4 getting-started guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32p4/get-started/index.html)
+
+
+For this project, it is recommended to install ESP-IDF using [ESP-IDF Installation Manager](https://docs.espressif.com/projects/idf-im-ui/en/latest/), and to select the **latest version** (i.e., the current `master` branch).
+**Older ESP-IDF releases may not include full or stable I3C support for ESP32-P4.**
+
 
 In a typical ESP-IDF project (for example, when using VS Code + ESP-IDF extension), the source files in this repository are expected to live under the project's `main/` component directory.
 
@@ -125,7 +129,6 @@ The DFRobot FireBeetle 2 ESP32-P4 development board uses:
 - **CPU frequency:** `360 MHz`
 
 Before building, please check the relevant settings in **ESP-IDF configuration** to ensure they match your board and environment.
-
 For example, if you are using **VS Code + ESP-IDF extension**, you can open:
 - **ESP-IDF: SDK Configuration Editor**
 
