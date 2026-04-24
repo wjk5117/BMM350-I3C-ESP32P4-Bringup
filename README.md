@@ -7,7 +7,7 @@ This repository is a **preliminary open-source attempt** to explore the feasibil
 <!-- add a figure here -->
 ![BMM350 I3C Setup](./hardware.png)
 
-Since practical BMM350-over-I3C examples are still relatively limited, this project is shared as a lightweight reference in the hope that it may be useful to others working on similar hardware bring-up and debugging tasks.
+Since BMM350-over-I3C examples are still relatively limited, this project is shared as a lightweight reference in the hope that it may be useful to others working on similar hardware bring-up and debugging tasks.
 
 The current focus is on:
 - I3C bus initialization on ESP32-P4
@@ -30,11 +30,11 @@ At present, the repository includes **three single-sensor I3C examples**:
 - Raw burst magnetic / temperature readout
 
 ### Notes
-- The current examples are based on the default static address configuration (`0x14`)
-- In principle, the setup may be extendable to **two BMM350 sensors** if the two devices use different static addresses (`0x14` and `0x15`)
+- The current examples are based on the default static address configuration of BMM350 (`0x14`)
+- In principle, the setup can be extendable to **two BMM350 sensors** if the two devices use different static addresses (`0x14` and `0x15`)
 
 ### Not Yet Supported
-- Multi-sensor BMM350 I3C on one shared bus beyond the basic two-address case
+- Multi-sensor (i.e., more than two) BMM350 I3C on one shared bus
 - Automatic multi-device identity handling
 
 ## Hardware
@@ -118,6 +118,22 @@ idf.py build
 idf.py flash monitor
 ```
 
+**Configuration note:**
+
+The DFRobot FireBeetle 2 ESP32-P4 development board uses:
+- **chip revision:** `v1.0`
+- **CPU frequency:** `360 MHz`
+
+Before building, please check the relevant settings in **ESP-IDF configuration** to ensure they match your board and environment.
+
+For example, if you are using **VS Code + ESP-IDF extension**, you can open:
+- **ESP-IDF: SDK Configuration Editor**
+
+Then go to:
+- **Component config** → **Hardware Settings** → **Chip revision**
+  - select **ESP32-P4 revisions < 3.0 (No >=3.x Support)**
+
+
 ### 4. Expected Result
 
 A successful run should show:
@@ -159,8 +175,8 @@ I (508) BMM350_SETAASA_1X: X=31.03 uT Y=-67.07 uT Z=25.37 uT | |B|=78.13 uT | Te
 
 - These examples are intended for **single-sensor bring-up and validation**
 
-- Multi-sensor BMM350 I3C is still challenging in our current understanding and experiments
+- Multi-sensor (>2) BMM350 I3C is still challenging in our current understanding and experiments due to the following reasons:
   - BMM350 only exposes **two static-address options** through `ADSEL`, which limits straightforward scaling with `SETAASA` and `SETDASA`
   - For `ENTDAA`, only the **ADSEL-related 1 bit** appears practically accessible, while the remaining **3 OTP-backed identity bits** are not currently configurable based on the available documentation
 
-- If you are interested in multi-BMM350 I3C, or have suggestions / ideas for a cleaner implementation, feel free to reach out:      [jikewang@sjtu.edu.cn](mailto:jikewang@sjtu.edu.cn)
+- **If you are interested in multi-BMM350 I3C, or have suggestions / ideas for a cleaner implementation, feel free to reach out:      [jikewang@sjtu.edu.cn](mailto:jikewang@sjtu.edu.cn)**
